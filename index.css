@@ -25,7 +25,6 @@ button{
 }
 .enunciado{
   padding-top: 240px; 
-  
 }
 .titulo{
   margin-top:5vw;
@@ -54,4 +53,7 @@ button {
 }
 .App-logo{
   z-index: 1;
+}
+.zezao{
+  width: 100%;
 }
