@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>aaa</title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript" src="questoes.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" type="text/css" href="main.4f2c5091.chunk.css">
+	<script type="text/javascript">
+		var c=0;
+		function questao(i,alternativa)
+			{
+				$.each(questoes,function(x,questao){
+					if(x==i)
+					{
+						var teste=$("#questao"+i).attr("teste");
+						if(teste=="aa"){
+						if(alternativa==questao.correta)
+						{
+							$("#"+i).append($("<p />").attr("class","correta").html("Correta.")).append("<br />").append($("<p />").html(questao.justificativa));
+							$("#questao"+i).attr("teste","ja foi");
+							c++;
+						}
+						else{
+							$("#"+i).append($("<p />").attr("class","incorreta").html("Incorreta.")).append("<br />").append($("<p />").html(questao.justificativa));
+							$("#questao"+i).attr("teste","ja foi");
+						}
+					}
+					else{
+					alert("Você já respondeu essa questão :)");
+				}
+				}
+				});
+			}
+			function acertos()
+			{
+				alert("Você acertou um total de "+c+" questões!");
+			}
+		$(function(){
+			console.log(questoes);
+				$.each(questoes,function(i,questao){
+				$(".App-header").append($("<div />").attr("id","questao"+i).attr("teste","aa").attr("class","teste").append($("<div />").attr("class","enunciado").append($("<p2 />").attr("class","id").html((i+1)+")")).append($("<p7 />").html(questao.enunciado+"<br/>")).append($("<div />").attr("class","alternativa").append($("<button />").attr("onclick","questao('"+i+"','a')").html("a)"+questao.a+"<br/>")).append("<br />").append($("<button />").attr("onclick","questao('"+i+"','b')").html("b)"+questao.b+"<br/>")).append("<br />").append($("<button />").attr("onclick","questao('"+i+"','c')").html("c)"+questao.c+"<br/>")).append("<br />").append($("<button />").attr("onclick","questao('"+i+"','d')").html("d)"+questao.d+"<br/>")).append("<br />").append($("<button />").attr("onclick","questao('"+i+"','e')").html("e)"+questao.e+"<br/>")).append($("<div />").attr("id",i)))));
+				})
+				$(".App-header").append($("<button />").attr("onclick","acertos()").text("Corrigir"));
+			});
+	</script>
+</head>
+<body id="corpo">
+	<div class="App">
+		<header class="App-header">
+			<img class="passaro"src="passaro.bb566d48.svg">
+			<img class="peixe" src="peixe.5976e031.svg">
+			<img class="planta" src="planta.d99d1e1c.svg">
+			<img class="bicho" src="bicho.2fbb2ccf.svg">
+			<img class="App-logo" src="biology.a7b87a04.svg">
+			<img class="jacare" src="jacare.953ef8c3.svg">
+			<img class="formiga" src="formiga.a0c0e169.svg">
+			<img class="ramo" src="ramo.063849b3.svg">
+			<
+			<h1 class="titulo teste">Questionário de relações ecológicas</h1>
+			<p1 class="atencao teste">Clique na alternativa correta</p1>
+		</header>
+	</div>
+</body>
+</html>
