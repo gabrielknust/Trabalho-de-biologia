@@ -263,10 +263,11 @@ input, select, textarea {
 /* Row */
 
 	.row {
-		display: flex;
+		/*display: flex;
 		flex-wrap: wrap;
 		box-sizing: border-box;
-		align-items: stretch;
+		align-items: stretch;*/
+		margin: auto;
 	}
 
 		.row > * {
@@ -3132,3 +3133,7 @@ height:25em!important;
  .feature p{
 	 color:white!important;
  }
+#explica{
+	color: white;
+	text-align: center;
+}
