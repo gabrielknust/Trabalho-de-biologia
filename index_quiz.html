@@ -37,12 +37,16 @@
 			{
 				alert("Você acertou um total de "+c+" questões!");
 			}
+			function voltar()
+            {
+                window.location.replace("./index.html");
+            }
 		$(function(){
 			console.log(questoes);
 				$.each(questoes,function(i,questao){
 				$(".App-header").append($("<div />").attr("id","questao"+i).attr("teste","aa").attr("class","teste zezao").append($("<div />").attr("class","enunciado").append($("<p2 />").attr("class","id").html((i+1)+")")).append($("<p7 />").html(questao.enunciado+"<br/>")).append($("<div />").attr("class","alternativa").append($("<button />").attr("onclick","questao('"+i+"','a')").html("a)"+questao.a+"<br/>")).append("<br />").append($("<button />").attr("onclick","questao('"+i+"','b')").html("b)"+questao.b+"<br/>")).append("<br />").append($("<button />").attr("onclick","questao('"+i+"','c')").html("c)"+questao.c+"<br/>")).append("<br />").append($("<button />").attr("onclick","questao('"+i+"','d')").html("d)"+questao.d+"<br/>")).append("<br />").append($("<button />").attr("onclick","questao('"+i+"','e')").html("e)"+questao.e+"<br/>")).append($("<div />").attr("id",i)))));
 				})
-				$(".App-header").append($("<button />").attr("onclick","acertos()").text("Contabilizar acertos"));
+				$(".App-header").append($("<div />").append($("<button />").attr("onclick","voltar()").text("Voltar")).append($("<button />").attr("onclick","acertos()").text("Contabilizar acertos")));
 			});
 	</script>
 </head>
